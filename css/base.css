@@ -1,3 +1,17 @@
+body{
+    font-family: 'Ubuntu', sans-serif;
+}
+
+main{
+    width: 80%;
+    margin: 2% auto;
+    overflow: hidden;
+    text-align: center;
+}
 #photo-template{
     display: none;
+}
+img {
+    height: 12rem;
+    width: 12rem;
 }

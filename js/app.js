@@ -4,7 +4,7 @@
 // Global variables
 //=========
 var keywords = [];
-var animalObj=[];
+var animalObj = [];
 
 
 
@@ -35,9 +35,10 @@ Animal.prototype.render = function () {
     template.removeAttr('id');
     $('main').append(template);
 }
-// Animal.prototype.list = function () {
 
-// }
+// =========
+// functions
+// =========
 
 function list() {
     var uniqueWords = [];
@@ -48,24 +49,21 @@ function list() {
         $('#drop-list').append(`<option value="${uniqueWords[index]}">${uniqueWords[index]}</option>`)
 
     }
-
-
 }
-function filterImg(){
-    $('#drop-list').on('change',function(){
-        console.log(this.value);
+
+
+function filterImg() {
+    $('#drop-list').on('change', function () {
+        // console.log(this.value);
         $('#main').children().not(':first-child').remove();
         for (let index = 0; index < animalObj.length; index++) {
-            
-            if(this.value == animalObj[index].keyword)
-            {
-                
+
+            if (this.value == animalObj[index].keyword) {
                 animalObj[index].render();
-                console.log(animalObj[index]);
             }
-            
+
         }
-        
+
     });
 
 }
@@ -86,7 +84,6 @@ function populateAnimalData() {
         .then(data => {
             data.forEach(element => {
                 let animal = new Animal(element);
-                // console.log(animal);
                 animal.render();
             });
             list();
