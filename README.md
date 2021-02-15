@@ -9,9 +9,9 @@ We provide the user the abality to filter the images according to a keyword he s
 
 Number and name of feature: Display images
 
-Estimate of time needed to complete: _____
+Estimate of time needed to complete: 60 min
 
-Start time: _____
+Start time: 2:50
 
 Finish time: _____
 
