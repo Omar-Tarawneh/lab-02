@@ -80,7 +80,7 @@ function populateAnimalData() {
         dataType: 'json'
     };
 
-    $.ajax('../data/page-1.json', ajaxSettings)
+    $.ajax('./data/page-1.json', ajaxSettings)
         .then(data => {
             data.forEach(element => {
                 let animal = new Animal(element);
