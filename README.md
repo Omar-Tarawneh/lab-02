@@ -33,13 +33,13 @@ Actual time needed to complete: 45 min
 
 Number and name of feature: Style the application
 
-Estimate of time needed to complete: _____
+Estimate of time needed to complete: 60 min
 
-Start time: _____
+Start time: 6:00
 
-Finish time: _____
+Finish time: 7:00
 
-Actual time needed to complete: _____
+Actual time needed to complete: 60 min
 
 
 
