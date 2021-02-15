@@ -4,6 +4,7 @@
 // Global variables
 //=========
 var keywords = [];
+var animalObj=[];
 
 
 
@@ -18,6 +19,7 @@ function Animal(an) {
     this.keyword = an.keyword;
     this.horns = an.horns;
     keywords.push(this.keyword);
+    animalObj.push(this)
 
 }
 
@@ -49,6 +51,24 @@ function list() {
 
 
 }
+function filterImg(){
+    $('#drop-list').on('change',function(){
+        console.log(this.value);
+        $('#main').children().not(':first-child').remove();
+        for (let index = 0; index < animalObj.length; index++) {
+            
+            if(this.value == animalObj[index].keyword)
+            {
+                
+                animalObj[index].render();
+                console.log(animalObj[index]);
+            }
+            
+        }
+        
+    });
+
+}
 
 
 
@@ -70,6 +90,7 @@ function populateAnimalData() {
                 animal.render();
             });
             list();
+            filterImg();
         });
 
 }
