@@ -54,6 +54,18 @@ Actual time needed to complete: 70 min
 
 
 
+Number and name of feature: Styling & Sorting 
+
+Estimate of time needed to complete: 60 min
+
+Start time: 2:30
+
+Finish time: 3:20
+
+Actual time needed to complete: 50 min
+
+
+
 Codded by:
 
 * Omar Tarawneh

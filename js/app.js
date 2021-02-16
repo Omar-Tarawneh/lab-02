@@ -99,6 +99,46 @@ function renderPage() {
     animalObj = [];
     keywords = [];
 }
+
+function sortTitle(){
+    animalObj.sort ((a,b) => {
+        if ( a.title < b.title ){
+            return -1;
+          }
+          if ( a.title > b.title ){
+            return 1;
+          }
+          return 0;
+        
+    });
+
+    $('#main').children().not(':first-child').remove();
+    for (let index = 0; index < animalObj.length; index++) {
+        animalObj[index].render();  
+    }
+}
+
+function sortHorns(){
+    animalObj.sort ((a,b) => {
+        if ( a.horns > b.horns ){
+            return -1;
+          }
+          if ( a.horns < b.horns ){
+            return 1;
+          }
+          return 0;
+        
+          
+    });
+    console.log(animalObj);
+    $('#main').children().not(':first-child').remove();
+    for (let index = 0; index < animalObj.length; index++) {
+        animalObj[index].render();  
+    }
+}
+
+
+
 // ========
 // Data ajax
 // ========
@@ -128,6 +168,8 @@ function populateAnimalData() {
 // events
 //========
 $('#page-1').on('click', renderPage);
+$('#title').on('click' , sortTitle);
+$('#horns').on('click' , sortHorns);
 
 
 
