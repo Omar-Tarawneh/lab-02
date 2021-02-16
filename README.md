@@ -42,7 +42,15 @@ Finish time: 7:00
 Actual time needed to complete: 60 min
 
 
+Number and name of feature: Pagination and Template
 
+Estimate of time needed to complete: 60 min
+
+Start time: 2:00
+
+Finish time: 2:30
+
+Actual time needed to complete: 70 min
 
 
 
