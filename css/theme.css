@@ -1,6 +1,10 @@
 header {
-    background-color: #a5a58d;
+    background-color: hsl(60, 12%, 60%);
     border-radius: 10px;
+    display: flex;
+    justify-content: space-around;
+    height: 120px;
+    align-items: center;
 }
 h1 {
     font-size: x-large;
@@ -26,4 +30,13 @@ footer{
     height: 70px;
     vertical-align: middle;
     line-height: 70px;
+}
+button , select{
+    height: 60px;
+    border-radius: 5px;
+    align-items: center;
+    background-color: #ddbea9;
+    width: 100px;
+    border: black 1px solid;
+
 }

@@ -3,9 +3,12 @@ header{
     vertical-align: middle;
     line-height: 3rem;
 }
+main{
+    display: flex;
+    flex-wrap: wrap;
+}
 
 section{
-    display: inline-block;
     margin: 1rem;
     clear: right;
     border: 5px solid #ccc;
