@@ -28,12 +28,8 @@ function Animal(an) {
 // =======
 
 Animal.prototype.render = function () {
-    let template = $('#photo-template').clone();
-    template.find('h2').text(this.title);
-    template.find('img').attr('src', this.img);
-    template.find('p').text(this.description);
-    template.removeAttr('id');
-    $('main').append(template);
+    let template = $('#photo-template').html()
+    $('main').append(Mustache.render(template, this));
 }
 
 // =========
@@ -60,6 +56,8 @@ function filterImg() {
 
             if (this.value == animalObj[index].keyword) {
                 animalObj[index].render();
+            } else if (this.value == 'all') {
+                animalObj[index].render();
             }
 
         }
@@ -70,6 +68,37 @@ function filterImg() {
 
 
 
+function renderPage() {
+    let page = `./data/${this.value}`;
+    function populateAnimalData() {
+        const ajaxSettings = {
+            method: 'get',
+            dataType: 'json'
+        };
+
+        $.ajax(page, ajaxSettings)
+            .then(data => {
+                data.forEach(element => {
+                    let animal = new Animal(element);
+                    animal.render();
+                });
+                list();
+                filterImg();
+            });
+    }
+    $('#main').children().not(':first-child').remove();
+    $('#drop-list').children().not(':first-child').remove();
+    $('document').ready(populateAnimalData);
+    if (this.value == 'page-1.json') {
+        $('#page-1').html('Page-2');
+        this.value = 'page-2.json';
+    } else {
+        $('#page-1').html('Page-1');
+        this.value = 'page-1.json';
+    }
+    animalObj = [];
+    keywords = [];
+}
 // ========
 // Data ajax
 // ========
@@ -91,6 +120,15 @@ function populateAnimalData() {
         });
 
 }
+
+
+
+
+//========
+// events
+//========
+$('#page-1').on('click', renderPage);
+
 
 
 
